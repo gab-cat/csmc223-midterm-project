@@ -7,6 +7,7 @@ This repo will host the files used for the Midterm project about the Processor S
   
 ### Instruction Set
 The Instruction Set Architecture (ISA) defines the set of instructions that a processor can execute, along with their formats and behavior. In this architecture, the ISA is designed to facilitate the execution of instructions by a hypothetical processor.
+
 **OpCodes:** Each instruction is represented by a unique OpCode, which specifies the operation to be performed.
 
 ### Supported Operations:
