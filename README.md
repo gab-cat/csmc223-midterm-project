@@ -1,6 +1,22 @@
 # csmc223-midterm-project
 This repo will host the files used for the Midterm project about the Processor Simulator.
 
+## How to Use
+
+### Writing Instructions in source.txt
+1. Open the `source.txt` file in a text editor.
+2. Each line in the file represents an instruction to be executed by the program.
+3. Write instructions in the following format:
+   - `OPCODE ARG1 ARG2`: Each instruction consists of an OpCode followed by one or two arguments.
+   - Example: `LOD 01 100`: This instruction loads the value `100` into register `01`.
+4. Save the changes to the `source.txt` file.
+
+### Running the Program
+1. Compile the program using a C++ compiler. For example:
+  ```g++ -o program_name program_source.cpp`
+2. Run the compiled program
+   
+
 
 ## Instructional Set Architecture (ISA)
 
