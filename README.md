@@ -13,9 +13,12 @@ This repo will host the files used for the Midterm project about the Processor S
 
 ### Running the Program
 1. Compile the program using a C++ compiler. For example:
-  ```g++ -o program_name program_source.cpp`
+   ```bash
+   g++ -o program_name program_source.cpp
 2. Run the compiled program
-   
+      ```bash
+   ./program_name
+3. The program will read the instructions from source.txt, execute them, and display the results.
 
 
 ## Instructional Set Architecture (ISA)
