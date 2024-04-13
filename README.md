@@ -102,7 +102,6 @@ These general-purpose registers will be used to hold data and address values dur
 
 | Register | Size (bits) | Description          |
 |----------|-------------|----------------------|
-| R0       | 32          | General-Purpose Register |
 | R1       | 32          | General-Purpose Register |
 | R2       | 32          | General-Purpose Register |
 | R3       | 32          | General-Purpose Register |
@@ -110,19 +109,50 @@ These general-purpose registers will be used to hold data and address values dur
 | R5       | 32          | General-Purpose Register |
 | R6       | 32          | General-Purpose Register |
 | R7       | 32          | General-Purpose Register |
+| R8       | 32          | General-Purpose Register |
 
 
-Memory
-Size: 64KB
-Addressable Unit: Byte
-Memory layout:
+## Memory
 
-Each memory location stores an 8-digit decimal value.
-The first 2 digits signify the operation to be performed.
-The next 3 digits represent the first argument, where the first digit indicates whether it's a value (1) or register (0).
-The remaining 3 digits represent the last argument, following the same logic.
-Control Unit
-The program begins by displaying the default register values, followed by reading instructions from source.txt, decoding them, loading into memory, and executing. After execution, the memory is displayed again, and the program moves to the next instruction.
+- **Size:** 64KB
+- **Addressable Unit:** Byte
+
+Values/Instructions stored in memory are represented as an 8-digit decimal.
+
+### Memory Layout:
+Each memory location stores an 8-digit decimal value, where:
+- The first 2 digits signify the operation the CPU must perform.
+- The next 3 digits represent the first argument that will be used.
+- The remaining 3 digits represent the last argument for the operation.
+- At most, each argument can only support 3 digit number, in which the maximum will be 999.
+  
+**Example:**
+For the instruction `LOD 01 01`, it would be represented in memory as `01 001 001`.
+In this example:
+- The `01` represents the opcode (LOD).
+- The first argument is `001`, which means it's a register (R1).
+- The last argument is `101`, indicating a value of 1.
+
+So, the meaning of the code is to load the value 1 into register 1.
+
+## Memory Addressing
+
+Memory addresses in this system range from `0x01` to `0xFF`, allowing for a total of 255 memory locations. Each memory address represents a byte of data, and instructions or values are stored sequentially from the lowest address (`0x01`) to the highest address (`0xFF`).
+
+### Address Range:
+- **Starting Address:** `0x01`
+- **Ending Address:** `0xFF`
+- **Total Number of Addresses:** 255
+
+### Memory Organization:
+- Memory addresses are used to reference specific locations in the memory space.
+- Instructions and data values are stored in consecutive memory locations, with each location storing a single byte of information.
+- The memory is byte-addressable, meaning each memory address points to a single byte of data.
+- The memory is organized linearly, with the lowest address (`0x01`) at the beginning and the highest address (`0xFF`) at the end.
+
+This addressing scheme allows for efficient access to instructions and data stored in memory during program execution.
+
+
 
 
 
