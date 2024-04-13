@@ -6,41 +6,41 @@ This repo will host the files used for the Midterm project about the Processor S
 
 
 **EXT 00 - Exit:** Terminates the program.
-*Format:* `EXT 00 00`
- - This instruction does not take any argument but halts the program execution.
-
+- *Format:* `EXT 00 00`
+- This instruction does not take any argument but halts the program execution.
 
 
 **LOD 01 - Load:** Loads a value from memory into a register.
-*Format:* `LOD [REGISTER] [VALUE]`
+- *Format:* `LOD [REGISTER] [VALUE]`
 - Example: `LOD 01 02`
-- This instruction stores the value 2 into R1.
-
+ - This instruction stores the value 2 into R1.
 
 
 **STR 02 - Store:** Stores a value from a register into memory.
 **Format:** `STR [REGISTER] [MEMORY_ADDRESS]`
 - Example: `STR 02 10`
-- This instruction stores the value from R2 into memory address 10.
+ - This instruction stores the value from R2 into memory address 10.
 
 
+**ADD 03 - Add:** Adds two values and stores the result in a register.
+- **Format:**`ADD [DESTINATION_REGISTER] [SOURCE_REGISTER]`
+- Example: `ADD 03 01`
+ - This instruction adds the values in R1 and R3 and stores the result in R3.
 
-ADD 03 - Add: Adds two values and stores the result in a register.
-Format: ADD [DESTINATION_REGISTER] [SOURCE_REGISTER]
-Example: ADD 03 01
-This instruction adds the values in R1 and R3 and stores the result in R3.
-SUB 04 - Subtract: Subtracts one value from another and stores the result in a register.
 
-Format: SUB [DESTINATION_REGISTER] [SOURCE_REGISTER]
-Example: SUB 04 02
-This instruction subtracts the value in R2 from the value in R4 and stores the result in R4.
-MUL 05 - Multiply: Multiplies two values and stores the result in a register.
+**SUB 04 - Subtract:** Subtracts one value from another and stores the result in a register.
+- **Format:** `SUB [DESTINATION_REGISTER] [SOURCE_REGISTER]`
+- Example: `SUB 04 02`
+ - This instruction subtracts the value in R2 from the value in R4 and stores the result in R4.
 
-Format: MUL [DESTINATION_REGISTER] [SOURCE_REGISTER]
-Example: MUL 05 03
-This instruction multiplies the values in R3 and R5 and stores the result in R5.
+
+**MUL 05 - Multiply:** Multiplies two values and stores the result in a register.
+- **Format:** `MUL [DESTINATION_REGISTER] [SOURCE_REGISTER]`
+- Example: MUL 05 03
+ - This instruction multiplies the values in R3 and R5 and stores the result in R5.
+
+
 DIV 06 - Divide: Divides one value by another and stores the quotient in a register.
-
 Format: DIV [DESTINATION_REGISTER] [SOURCE_REGISTER]
 Example: DIV 06 04
 This instruction divides the value in R4 by the value in R6 and stores the quotient in R6.
