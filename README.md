@@ -9,6 +9,7 @@ This repo will host the files used for the Midterm project about the Processor S
 3. Write instructions in the following format:
    - `OPCODE ARG1 ARG2`: Each instruction consists of an OpCode followed by one or two arguments.
    - Example: `LOD 01 100`: This instruction loads the value `100` into register `01`.
+   - Each line should only have on instruction.
 4. Save the changes to the `source.txt` file.
 
 ### Running the Program
@@ -154,7 +155,7 @@ For the instruction `LOD 01 01`, it would be represented in memory as `01 001 00
 In this example:
 - The `01` represents the opcode (LOD).
 - The first argument is `001`, which means it's a register (R1).
-- The last argument is `101`, indicating a value of 1.
+- The last argument is `001`, indicating a value of 1.
 
 So, the meaning of the code is to load the value 1 into register 1.
 
