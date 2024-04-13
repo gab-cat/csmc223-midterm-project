@@ -132,6 +132,7 @@ The control unit manages the execution flow of the program and coordinates the p
 4. **Executing Instructions**:
    - The program begins execution by fetching the instruction stored at the first memory address.
    - After executing the instruction, the control unit updates the state of the registers and memory accordingly.
+   - The program counter is also incremented.
    
 5. **Displaying Register Memory State**:
    - After executing each instruction, the program displays the state of the register memory, showing any updates made during execution.
@@ -144,6 +145,83 @@ The control unit manages the execution flow of the program and coordinates the p
    - If there are no more instructions left in memory, the program ends execution.
 
 This control unit ensures the orderly execution of instructions and facilitates the processing of data within the program.
+
+### Sample Instruction set from source file
+   ```source.txt
+   LOD 01 10
+   EXT 00 00
+   ```
+
+### Sample Terminal Display
+   ```cmd
+   REGISTER [Initial State]
+===================
+R1 = 000
+R2 = 000
+R3 = 000
+R4 = 000
+R5 = 000
+R6 = 000
+R7 = 000
+R8 = 000
+===================
+
+
+FETCH FROM MEMORY:
+0x01: 01001010 <- Current Instruction
+0x02: 00000000
+0x03: 00000000
+0x04: 00000000
+0x05: 00000000
+0x06: 00000000
+0x07: 00000000
+0x08: 00000000
+0x09: 00000000
+0x0a: 00000000
+0x0b: 00000000
+0x0c: 00000000
+
+DECODING:
+
+LOADING VALUE ==============
+LOADED: 10 into register 1
+============================
+
+
+Program Counter: 1
+REGISTER [Current State]
+===================
+R1 = 010
+R2 = 000
+R3 = 000
+R4 = 000
+R5 = 000
+R6 = 000
+R7 = 000
+R8 = 000
+===================
+Executed Instruction: 1001010
+Next Instructions: [00000000 00000000 00000000]
+
+
+FETCH FROM MEMORY:
+0x01: 01001010
+0x02: 00000000 <- Current Instruction
+0x03: 00000000
+0x04: 00000000
+0x05: 00000000
+0x06: 00000000
+0x07: 00000000
+0x08: 00000000
+0x09: 00000000
+0x0a: 00000000
+0x0b: 00000000
+0x0c: 00000000
+
+DECODING:
+
+EXITING PROGRAM
+```
 
 
 
