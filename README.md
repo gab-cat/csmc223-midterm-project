@@ -92,20 +92,25 @@ This repo will host the files used for the Midterm project about the Processor S
   - Moves the value 10 into register R2.
 
 
+## Registers
 
+### General-Purpose Registers (R0-R7):
+- **Number:** 8 registers
+- **Size:** 32-bit
 
-Number: 8 registers
-Size: 32-bit
-Register	Size (bits)	Description
-R0	32	General-Purpose Register
-R1	32	General-Purpose Register
-R2	32	General-Purpose Register
-R3	32	General-Purpose Register
-R4	32	General-Purpose Register
-R5	32	General-Purpose Register
-R6	32	General-Purpose Register
-R7	32	General-Purpose Register
-These general-purpose registers hold data and address values during instruction execution.
+These general-purpose registers will be used to hold data and address values during the execution of instructions. Each register will be 32 bits in size, allowing for the storage of integers, memory addresses, and other data types commonly used in processor operations.
+
+| Register | Size (bits) | Description          |
+|----------|-------------|----------------------|
+| R0       | 32          | General-Purpose Register |
+| R1       | 32          | General-Purpose Register |
+| R2       | 32          | General-Purpose Register |
+| R3       | 32          | General-Purpose Register |
+| R4       | 32          | General-Purpose Register |
+| R5       | 32          | General-Purpose Register |
+| R6       | 32          | General-Purpose Register |
+| R7       | 32          | General-Purpose Register |
+
 
 Memory
 Size: 64KB
