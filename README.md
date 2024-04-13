@@ -148,13 +148,7 @@ This control unit ensures the orderly execution of instructions and facilitates 
 
 ### Sample Instruction set from source file
    ```source.txt
-   LOD 01 10
-   EXT 00 00
-   ```
-
-### Sample Terminal Display
-   ```cmd
-   REGISTER [Initial State]
+REGISTER [Initial State]
 ===================
 R1 = 000
 R2 = 000
@@ -169,7 +163,7 @@ R8 = 000
 
 FETCH FROM MEMORY:
 0x01: 01001010 <- Current Instruction
-0x02: 00000000
+0x02: 02004001
 0x03: 00000000
 0x04: 00000000
 0x05: 00000000
@@ -180,6 +174,7 @@ FETCH FROM MEMORY:
 0x0a: 00000000
 0x0b: 00000000
 0x0c: 00000000
+0x0d: 00000000
 
 DECODING:
 
@@ -201,12 +196,12 @@ R7 = 000
 R8 = 000
 ===================
 Executed Instruction: 1001010
-Next Instructions: [00000000 00000000 00000000]
+Next Instructions: [02004001 00000000 00000000]
 
 
 FETCH FROM MEMORY:
 0x01: 01001010
-0x02: 00000000 <- Current Instruction
+0x02: 02004001 <- Current Instruction
 0x03: 00000000
 0x04: 00000000
 0x05: 00000000
@@ -217,6 +212,45 @@ FETCH FROM MEMORY:
 0x0a: 00000000
 0x0b: 00000000
 0x0c: 00000000
+0x0d: 00000000
+
+DECODING:
+
+STORING VALUE ==============
+STORED: 10 in memory location 4
+============================
+
+
+Program Counter: 2
+REGISTER [Current State]
+===================
+R1 = 010
+R2 = 000
+R3 = 000
+R4 = 000
+R5 = 000
+R6 = 000
+R7 = 000
+R8 = 000
+===================
+Executed Instruction: 2004001
+Next Instructions: [00000000 00000010 00000000]
+
+
+FETCH FROM MEMORY:
+0x01: 01001010
+0x02: 02004001
+0x03: 00000000 <- Current Instruction
+0x04: 00000010
+0x05: 00000000
+0x06: 00000000
+0x07: 00000000
+0x08: 00000000
+0x09: 00000000
+0x0a: 00000000
+0x0b: 00000000
+0x0c: 00000000
+0x0d: 00000000
 
 DECODING:
 
