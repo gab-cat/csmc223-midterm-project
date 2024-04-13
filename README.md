@@ -2,21 +2,24 @@
 This repo will host the files used for the Midterm project about the Processor Simulator.
 
 
-Instructional Set Architecture (ISA)
-Format: EXT 00 00
+## Instructional Set Architecture (ISA)
+
+### EXT 00 - Exit: Terminates the program.
+**Format:** `EXT 00 00`
 This instruction does not take any argument but halts the program execution.
-LOD 01 - Load: Loads a value from memory into a register.
 
-Format: LOD [REGISTER] [VALUE]
-Example: LOD 01 02
-This instruction stores the value 2 into R1.
-STR 02 - Store: Stores a value from a register into memory.
 
-Format: STR [REGISTER] [MEMORY_ADDRESS]
-Example: STR 02 10
-This instruction stores the value from R2 into memory address 10.
+### LOD 01 - Load: Loads a value from memory into a register.
+**Format:** `LOD [REGISTER] [VALUE]`
+- Example: `LOD 01 02`
+- This instruction stores the value 2 into R1.
+
+### STR 02 - Store: Stores a value from a register into memory.
+**Format:** `STR [REGISTER] [MEMORY_ADDRESS]`
+- Example: `STR 02 10`
+- This instruction stores the value from R2 into memory address 10.
+
 ADD 03 - Add: Adds two values and stores the result in a register.
-
 Format: ADD [DESTINATION_REGISTER] [SOURCE_REGISTER]
 Example: ADD 03 01
 This instruction adds the values in R1 and R3 and stores the result in R3.
