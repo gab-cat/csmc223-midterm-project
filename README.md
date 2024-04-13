@@ -14,10 +14,10 @@ This repo will host the files used for the Midterm project about the Processor S
 
 ### Running the Program
 1. Compile the program using a C++ compiler. For example:
-   ```bash
+   ```cmd
    g++ -o program_name program_source.cpp
 2. Run the compiled program
-      ```bash
+   ```cmd
    ./program_name
 3. The program will read the instructions from source.txt, execute them, and display the results.
 
@@ -94,6 +94,7 @@ The Instruction Set Architecture (ISA) defines the set of instructions that a pr
 - **Format:** `NOP 00 00`
 - Example: `NOP 00 00`
   - Does nothing and moves to the next instruction.
+  - Can be used as placeholders, and to store values.
 
 #### **PRT 14 - Print**
 - **Format:** `PRT [ARGUMENT] [VALUE/REGISTER]`
@@ -111,9 +112,9 @@ The Instruction Set Architecture (ISA) defines the set of instructions that a pr
   - Duplicates the value in R3 and stores it in R5.
 
 #### **MOV 17 - Move Value**
-- **Format:** `MOV [VALUE] [REGISTER]`
-- Example: `MOV 10 02`
-  - Moves the value 10 into register R2.
+- **Format:** `MOV [REGISTER] [REGISTER]`
+- Example: `MOV 08 02`
+  - Moves the value of R8 into register R2.
 
 
 ## Registers
@@ -177,6 +178,36 @@ Memory addresses in this system range from `0x01` to `0xFF`, allowing for a tota
 This addressing scheme allows for efficient access to instructions and data stored in memory during program execution.
 
 
+## Control Unit
+
+The control unit manages the execution flow of the program and coordinates the processing of instructions. Here's how it operates:
+
+1. **Displaying Default Register Values**: 
+   - The program starts by displaying the default values of the registers, all of which are initially set to 0.
+
+2. **Reading Instructions from source.txt**:
+   - Instructions are read line by line from the `source.txt` file.
+   - Each instruction is then translated into an 8-bit data representation based on the instruction format.
+
+3. **Storing Instructions in Memory**:
+   - The translated instructions are stored sequentially in the memory, starting from the first address.
+   - Memory addresses range from `0x01` to `0xFF`.
+
+4. **Executing Instructions**:
+   - The program begins execution by fetching the instruction stored at the first memory address.
+   - After executing the instruction, the control unit updates the state of the registers and memory accordingly.
+   
+5. **Displaying Register Memory State**:
+   - After executing each instruction, the program displays the state of the register memory, showing any updates made during execution.
+
+6. **Moving to the Next Instruction**:
+   - The control unit then moves to the next memory address to fetch and execute the next instruction.
+   - This process continues until all instructions in memory have been executed or until the program encounters an exit instruction (`EXT`) or an error condition.
+
+7. **Ending Program Execution**:
+   - If there are no more instructions left in memory, the program ends execution.
+
+This control unit ensures the orderly execution of instructions and facilitates the processing of data within the program.
 
 
 
