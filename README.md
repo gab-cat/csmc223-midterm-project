@@ -3,19 +3,19 @@ This repo will host the files used for the Midterm project about the Processor S
 
 
 ## Instructional Set Architecture (ISA)
-
-
+<br>
+<br>
 **EXT 00 - Exit:** Terminates the program.
 - *Format:* `EXT 00 00`
 - This instruction does not take any argument but halts the program execution.
-  
-  
+<br>
+<br>
 **LOD 01 - Load:** Loads a value from memory into a register.
 - *Format:* `LOD [REGISTER] [VALUE]`
 - Example: `LOD 01 02`
  - This instruction stores the value 2 into R1.
-  
-  
+  <br>
+  <br>
 **STR 02 - Store:** Stores a value from a register into memory.
 - **Format:** `STR [REGISTER] [MEMORY_ADDRESS]`
 - Example: `STR 02 10`
